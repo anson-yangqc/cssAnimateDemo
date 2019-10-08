@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jquery.js'></script>
+</head>
+<body>
+<style>
+	.zan{position: relative;}
+	#animation {
+	    animation: myfirst .5s;
+	}
+	#animation2 {
+	    animation: myfirst2 .5s;
+	}
+	@keyframes myfirst{
+		0% {
+		    width: 40px;
+		    height: 40px;
+		}
+		50% {
+		    width: 50px;
+		    height: 50px;
+		}
+		100% {
+		    width: 40px;
+		    height: 40px;
+		}
+	}
+	@keyframes myfirst2{
+		0% {
+		    width: 40px;
+		    height: 40px;
+		}
+		50% {
+		    width: 50px;
+		    height: 50px;
+		}
+		100% {
+		    width: 40px;
+		    height: 40px;
+		}
+	}
+	#two1{
+			position: absolute;
+		 animation: myCount .5s;opacity: 0;
+	}
+
+	#two2{
+			position: absolute;
+		 animation: myCount .5s;opacity: 0;
+	}
+	@keyframes myCount{
+		0% {
+		    top: -15px;
+		    opacity: 0;
+		}
+
+		25% {
+		    top: -20px;
+		    opacity: 0.5;
+		}
+		50% {
+		    top: -25px;
+		    opacity: 1;
+		}
+		75% {
+		    top: -30px;
+		    opacity: 0.5;
+		}
+		100% {
+		    top: -35px;
+		    opacity: 0;
+		}
+	}
+</style>
+<div style="height: 300px;"></div>
+	<div class="zan">
+		<img id="one"  src="https://demo.demohuo.top/jquery/11/1183/demo/Images/zan.png" alt="" width="40" height="40">
+		<span id="two1">+1</span>
+		<span id="two2">-1</span>
+	</div>
+<script>
+	var one = true
+	$('#one').click(function(){
+		if(one){
+			$(this).removeAttr('id')
+			$(this).attr('src','https://demo.demohuo.top/jquery/11/1183/demo/Images/yizan.png').attr('id','animation')
+		}else{
+			$(this).removeAttr('id')
+			$(this).attr('src','https://demo.demohuo.top/jquery/11/1183/demo/Images/zan.png').attr('id','animation2')
+		}
+		one = !one
+	})
+</script>
+</body>
+</html>

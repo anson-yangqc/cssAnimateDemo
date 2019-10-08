@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body style="background: #ccc">
+	<div class="shengboWrap">
+		<div class="t"><img src="./bg-wave.png" class="img"></div>
+	</div>
+	<style>
+		.shengboWrap{
+			border:1px solid #000;
+			position:relative;width:200px;height: 30px;overflow:hidden;
+		}
+		.t{position: absolute;left:0;right:0;width: 200%;overflow:hidden;
+		}
+		.t .img{    
+			white-space: nowrap;display: block;
+			animation: scrollGood 20s linear infinite;
+		}
+		@keyframes scrollGood {
+			0{}
+			100%{
+				transform: translate(-40%,0);
+			}
+		}
+	</style>
+	<div class="live">
+	    <img src="https://avatar.csdn.net/5/5/7/3_yujin0213.jpg" alt="">
+	    <span></span>
+	    <span></span>
+	 </div>
+	 <style>
+	 	.live{
+           position: relative;
+           width: 100px;
+           height: 100px;
+       }
+       .live img{
+       		border-radius: 100%;
+           width: 100px;
+           height: 100px;
+           z-index: 0;
+       }
+        @keyframes living {
+            0%{
+                transform: scale(1);
+                opacity: 0.5;  
+            }
+            50%{
+                transform: scale(1.5);  
+                opacity: 0;   /*圆形放大的同时，透明度逐渐减小为0*/
+            }
+            100%{
+                transform: scale(1);
+                opacity: 0.5;
+            }
+        }
+        .live span{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 0;
+            bottom: 0;
+            background: #fff;
+            border-radius: 50%;
+            -webkit-animation: living 3s linear infinite;
+            z-index: -1;
+        }
+        .live span:nth-child(2){
+            -webkit-animation-delay: 1.5s; /*第二个span动画延迟1.5秒*/
+        }
+	 </style>
+	 <div class="ballon"></div>
+	 <style>
+	 	@keyframes scaleDraw {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+            0%{
+                transform: scale(1);  /*开始为原始大小*/
+            }
+            25%{
+                transform: scale(1.1); /*放大1.1倍*/
+            }
+            50%{
+                transform: scale(1);
+            }
+            75%{
+                transform: scale(1.1);
+            }
+        }
+	    .ballon{
+	            border-radius: 100%;
+           width: 100px;
+           height: 100px;
+	            background: url("https://avatar.csdn.net/5/5/7/3_yujin0213.jpg");
+	            background-size: 150px 200px;
+	            -webkit-animation-name: scaleDraw; /*关键帧名称*/
+	            -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+	            -webkit-animation-iteration-count: infinite;  /*动画播放的次数*/
+	            -webkit-animation-duration: 5s; /*动画所花费的时间*/
+	        }
+	 </style>
+	 <div class="pics">
+         <img src="https://avatar.csdn.net/5/5/7/3_yujin0213.jpg" alt="" class="pic1">
+         <img src="https://www.baidu.com/img/baidu_jgylogo3.gif" alt="" class="pic2">
+     </div>
+     <style>
+     	 .pics{
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        .pic1{
+            width:100px;
+            height: 100px;
+        }
+        @keyframes picDraw {
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+        .pic2{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 0;
+            top: 0;
+            -webkit-animation: picDraw 5s ease-in-out infinite;
+        }
+     </style>	
+</body>
+</html>
