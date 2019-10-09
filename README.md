@@ -1,2 +1,2 @@
 # cssAnimateDemo
-项目中用到的css动画
+常用的css动画
