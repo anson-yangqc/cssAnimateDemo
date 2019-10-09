@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div>在fixed包含的dom，如果也是fixed/absolute，zindex怎么设置都只会在盒子之上，</div>
+<div>在fixed包含的dom，使用absolute做相对定位</div>
+	<div class="wrap">
+		<div class="content">content absolute</div>
+		<div class="content2">content fixed</div>
+	</div>
+	<style>
+		.wrap{
+			position: fixed;z-index: 100;
+			left:100px;
+			width:300px;height:300px;
+			top:50px;
+			background:#ccc;
+		}
+		.content{
+			position: absolute;z-index: 1;
+			width:150px;height:150px;
+			right:0;top:0;
+			background:#777;
+		}
+		.content2{
+			position: fixed;z-index: 1;
+			width:150px;height:150px;
+			left:0;top:0;
+			background:#777;
+		}
+	</style>
+</body>
+</html>
