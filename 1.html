@@ -5,9 +5,10 @@
 	<title>Document</title>
 </head>
 <body style="background: #ccc">
+    <p style="float: right;"><button id="start">启动/停止</button></p>
 	<div class="shengboWrap">
-		<div class="t"><img src="./bg-wave.png" class="img"></div>
-	</div>
+        <div class="t"><img src="./bg-wave.png" class="img animate" id="animateImg"></div>
+	</div>.img.animat
 	<style>
 		.shengboWrap{
 			border:1px solid #000;
@@ -17,8 +18,14 @@
 		}
 		.t .img{    
 			white-space: nowrap;display: block;
-			animation: scrollGood 20s linear infinite;
 		}
+        .t .img.animate{
+            animation: scrollGood 20s linear infinite;
+        }
+        .t .img.animate.stopAnimate{
+            animation-play-state:paused;
+            -webkit-animation-play-state:paused;
+        }
 		@keyframes scrollGood {
 			0{}
 			100%{
@@ -26,6 +33,17 @@
 			}
 		}
 	</style>
+    <script>
+        var hadclick = true
+        document.querySelector('#start').onclick = function(){
+            if(hadclick){
+                document.querySelector('#animateImg').className = "img animate stopAnimate"
+            }else{
+                document.querySelector('#animateImg').className = "img animate"
+            }
+            hadclick = !hadclick
+        }
+    </script>
 	<div class="live">
 	    <img src="https://avatar.csdn.net/5/5/7/3_yujin0213.jpg" alt="">
 	    <span></span>
